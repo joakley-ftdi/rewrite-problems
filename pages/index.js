@@ -27,21 +27,41 @@ export default function Home() {
                 <Link href="/foo-bar">
                 <a>Foo Bar (always works)</a>
                 </Link>
+                <ul>
+                  <li>Expected - render static page</li>
+                  <li>Actual - renders static page</li>
+                  <li>Result - works as expected</li>
+                </ul>
             </li>
             <li>
                 <Link href="/boo/far">
                 <a>Boo Far (breaks when catch all rewrites are enabled)</a>
                 </Link>
+                <ul>
+                  <li>Expected - render static page</li>
+                  <li>Actual - returns custom 404</li>
+                  <li className={styles.error}>Result - we get a custom 404 instead of a page</li>
+                </ul>
             </li>
             <li>
                 <Link href="/foo/bar">
                 <a>Redirect to foo-bar (works when rewrites are enabled)</a>
                 </Link>
+                <ul>
+                  <li>Expected - redirect to homepage</li>
+                  <li>Actual - redirects to homepage</li>
+                  <li>Result - works as expected</li>
+                </ul>
             </li>
             <li>
                 <Link href="/not-a-real-page">
-                <a>Not a real page - throws a 404 (green text when rewrites are enabled</a>
+                  <a>Not a real page - throws a 404 (green text when rewrites are enabled</a>
                 </Link>
+                <ul>
+                  <li>Expected - display custom 404</li>
+                  <li>Actual - displays custom 404</li>
+                  <li>Result - works as expected</li>
+                </ul>
             </li>
         </ul>
       </main>
