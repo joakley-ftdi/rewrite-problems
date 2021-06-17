@@ -33,7 +33,7 @@
   flex-grow: 1;
 }
 
-.title a {
+.title a, .container ul li a {
   color: #0070f3;
   text-decoration: none;
 }
